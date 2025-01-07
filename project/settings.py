@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "api" ,
     'rest_framework',
+    'silk',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'silk.middleware.SilkyMiddleware',
 ]
 
 ROOT_URLCONF = "project.urls"
@@ -125,3 +127,12 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = 'api.User' ## form custom user 
+
+REST_FRAMEWORK = {
+
+    #'DEFAULT_AUTHENTICATION_CLASSES': (
+        
+    #    'rest_framework_simplejwt.authentication.JWTAuthentication',
+   # )
+
+}
