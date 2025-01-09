@@ -1,6 +1,6 @@
 from django.contrib import admin
-from api.models import User ,Book
-# Register your models here.
+from api.models import User ,Book ,BookStore ,Author
+# Register your models her
 
 
 admin.site.register(User)
@@ -28,4 +28,6 @@ class BookOffer(admin.ModelAdmin):
     #    queryset.update(availability=True)       
             
 admin.site.register(Book,BookOffer)
+admin.site.register(BookStore)
+admin.site.register(Author)
 
