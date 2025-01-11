@@ -1,5 +1,7 @@
 from django.contrib import admin
-from api.models import User ,Book ,BookStore ,Author
+
+from api.models import Author, Book, BookStore, Order, OrderItem, User
+
 # Register your models her
 
 
@@ -30,4 +32,12 @@ class BookOffer(admin.ModelAdmin):
 admin.site.register(Book,BookOffer)
 admin.site.register(BookStore)
 admin.site.register(Author)
+class OrderItemInline(admin.TabularInline):
+    model = OrderItem 
 
+class OrderAdmin(admin.ModelAdmin):
+    inlines = [
+        
+        OrderItemInline
+    ]
+admin.site.register(Order,OrderAdmin)
